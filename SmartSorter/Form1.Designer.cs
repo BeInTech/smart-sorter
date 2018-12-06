@@ -46,6 +46,7 @@
             this.gridFillButton.TabIndex = 0;
             this.gridFillButton.Text = "Сортировать";
             this.gridFillButton.UseVisualStyleBackColor = true;
+            this.gridFillButton.Click += new System.EventHandler(this.gridFillButton_Click);
             // 
             // inputTextBox
             // 
@@ -63,16 +64,18 @@
             this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Входные данные";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // resultGridView
             // 
+            this.resultGridView.AllowUserToAddRows = false;
+            this.resultGridView.AllowUserToDeleteRows = false;
             this.resultGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.resultGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.value,
             this.count});
             this.resultGridView.Location = new System.Drawing.Point(12, 165);
             this.resultGridView.Name = "resultGridView";
+            this.resultGridView.ReadOnly = true;
             this.resultGridView.Size = new System.Drawing.Size(519, 244);
             this.resultGridView.TabIndex = 3;
             // 
@@ -109,6 +112,7 @@
             this.Controls.Add(this.gridFillButton);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.resultGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
